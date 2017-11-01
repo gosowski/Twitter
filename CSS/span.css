@@ -1,0 +1,22 @@
+.error {
+    color: red;
+}
+
+#changeEmail {
+    width: 200px;
+    height: 40px;
+    padding: 2px;
+
+}
+
+#changePass {
+    width: 200px;
+    height: 180px;
+    padding: 2px
+}
+
+#deleteAccount {
+    width: 200px;
+    height: 30px;
+    padding: 2px;
+}
