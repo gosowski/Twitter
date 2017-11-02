@@ -1,3 +1,8 @@
+body {
+    background: cornflowerblue;
+}
+
+
 .error {
     color: red;
 }
@@ -17,6 +22,40 @@
 
 #deleteAccount {
     width: 200px;
-    height: 30px;
+    height: 50px;
     padding: 2px;
 }
+
+.form {
+    width: 200px;
+    height: 350px;
+}
+
+.linki {
+    width: 200px;
+    height:60px;
+
+}
+
+.tweet {
+    width: 340px;
+    height: auto;
+    padding: 10px;
+    border: dotted 2px #020031;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+#mojeWpisy {
+    display: inline;
+}
+
+.rectangle {
+    display: inline-block;
+    width: 400px;
+    margin: 10px;
+    border: 1px dotted black;
+}
+
+
+
