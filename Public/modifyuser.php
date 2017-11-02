@@ -8,6 +8,7 @@ session_start();
 
 require_once (__DIR__ . './../sql/config.php');
 require_once (__DIR__.'./../Model/User.php');
+require_once (__DIR__.'./../Model/Tweet.php');
 
 if (!isset($_SESSION['logged'])) {
     header('Location: login.php');
@@ -64,8 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -75,36 +74,56 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="./../CSS/span.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-<div class="form">
-    <form action="" method="POST" id="changeEmail">
-        Zmiana adresu email:<br>
-        <input type="text" name="changeEmail"><br>
-        <button type="submit" name="submit" value="reEmail">Wyślij</button>
-    </form>
+<div class="rectangle">
+    <div class="form">
+        <form action="" method="POST" id="changeEmail">
+            Zmiana adresu email:<br>
+            <input type="text" name="changeEmail"><br>
+            <button type="submit" name="submit" value="reEmail">Wyślij</button>
+        </form>
+        <br><br>
+        <form action="" method="POST" id="changePass">
+            Zmiana hasła: <br>
+            Stare hasło:
+            <input type="password" name="oldPass"><br>
+            Nowe hasło:
+            <input type="password" name="newPass"><br>
+            Powtórz nowe hasło:
+            <input type="password" name="reNewPass"><br>
+
+            <button type="submit" name="submit" value="rePass">Wyślij</button>
+        </form>
+        <form action="" method="POST" id="deleteAccount">
+            <input type="radio" name="delete" value="deleteYes">Tak<br>
+            <input type="radio" name="delete" value="deleteNo">Nie<br>
+            <button type="submit" name="submit" value="delAcc">Wyślij</button>
+        </form>
+    </div>
     <br><br>
-    <form action="" method="POST" id="changePass">
-        Zmiana hasła: <br>
-        Stare hasło:
-        <input type="password" name="oldPass"><br>
-        Nowe hasło:
-        <input type="password" name="newPass"><br>
-        Powtórz nowe hasło:
-        <input type="password" name="reNewPass"><br>
+    <div class="linki">
 
-        <button type="submit" name="submit" value="rePass">Wyślij</button>
-    </form>
-    <form action="" method="POST" id="deleteAccount">
-        <input type="radio" name="delete" value="deleteYes">Tak<br>
-        <input type="radio" name="delete" value="deleteNo">Nie<br>
-        <button type="submit" name="submit" value="delAcc">Wyślij</button>
-    </form>
+        <a href="logout.php">Wyloguj się</a><br>
+        <a href="index.php">Powrót do strony głównej</a>
+
+    </div>
 </div>
-<br><br>
-<div class="linki">
+<div class="rectangle">
+    <?php
 
-    <a href="logout.php">Wyloguj się</a>
-    <a href="index.php">Powrót do strony głównej</a>
-
+        $tweets = Tweet::loadAllTweetsByUserId($conn, $_SESSION['id']);
+        foreach($tweets as $tweet) {
+            $id = $tweet -> getId();
+            $text = $tweet -> getText();
+            $creationDate = $tweet -> getCreationDate();
+            echo "<div class='tweet'>";
+            echo "Utworzony: ".$creationDate."<br>";
+            echo $text;
+            echo "<div>";
+            echo '<button type="submit" name="goToTweet" value="'.$id.'">Show</button>';
+            echo '</div>';
+            echo "</div>";
+        }
+    ?>
 </div>
 
 </body>
