@@ -1,7 +1,8 @@
 body {
     background: cornflowerblue;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
 }
-
 
 .error {
     color: red;
@@ -32,18 +33,37 @@ body {
 }
 
 .linki {
-    width: 200px;
-    height:60px;
+    width: auto;
+    height: auto;
+    margin: 10px;
+}
 
+#newTweet {
+    font-size: 18px;
+}
+
+#tweets {
+    font-size: 18px;
 }
 
 .tweet {
     width: 340px;
     height: auto;
     padding: 10px;
+    background-color: #a2bff4;
     border: dotted 2px #020031;
     border-radius: 15px;
     margin: 10px;
+    font-size: 15px;
+}
+
+.singleMsg {
+    background-color: #d0dff9;
+    width: 300px;
+    height: auto;
+    padding: 5px;
+    border: 2px solid #6495ed;
+    border-radius: 10px;
 }
 
 #mojeWpisy {
@@ -51,11 +71,83 @@ body {
 }
 
 .rectangle {
-    display: inline-block;
     width: 400px;
     margin: 10px;
-    border: 1px dotted black;
 }
 
+.messages {
+    display: inline-block;
+    width: 400px;
+    height: auto;
+    margin: 10px;
+    padding: 15px;
+    font-size: 18px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+a:hover {
+    color: #d0dff9;
+}
+
+textarea {
+    width: 250px;
+    background: #d0dff9;
+    min-height: 120px;
+    border: 1px solid #0a0e17;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+}
+
+.msg {
+    width: 380px;
+    height: auto;
+    padding: 5px;
+    background-color: #c1d4f7;
+    border: 1px dotted #324a76;
+    border-radius: 15px;
+    margin: 5px auto 5px auto;
+    font-size: 12px;
+}
+
+p {
+    font-size: 15px;
+}
+
+.header {
+    text-align: right;
+    font-size: 18px;
+}
+
+input[type="submit"] {
+    width: auto;
+    padding: 2px 5px 2px 5px;
+    text-align: right;
+    font-weight: 700;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #a2bff4;
+
+}
+
+button[type="submit"] {
+    width: auto;
+    padding: 2px 5px 2px 5px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+button[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #a2bff4;
+
+}
 
 
