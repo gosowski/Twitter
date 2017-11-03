@@ -1,16 +1,25 @@
 <?php
 
-/*Strona wyświetlająca	wszystkie	Tweety	jakie znajdują	się	w	systemie	(	od	najnowszego	do najstarszego	).
-Nad	nimi	ma	być	widoczny	formularz	do stworzenia	nowego	wpisu.
-*/
 session_start();
 
 require_once (__DIR__.'./../sql/config.php');
 require_once (__DIR__.'./../Model/Tweet.php');
 require_once (__DIR__.'./../Model/User.php');
+require_once (__DIR__.'./../Model/Message.php');
 
 if(isset($_SESSION['logged'])) {
-    echo "Zalogowany jako ".$_SESSION['email'].'  <a href="logout.php">Wyloguj się</a>  <a href="modifyuser.php">Mój profil</a>';
+    echo "Zalogowany jako ".$_SESSION['email'];
+    echo ' <a href="logout.php">Wyloguj się</a>';
+    echo ' <a href="modifyuser.php">Mój profil</a>';
+    echo ' <a href="messages.php">Wiadomości</a>';
+    echo "<br><br>";
+
+    $checkMsg = Message::checkMsg($conn, $_SESSION['id']);
+    if($checkMsg) {
+        echo "<strong>Masz nieprzeczytaną wiadomość</strong>";
+    }
+
+
 
 } else {
     header('Location: login.php');
