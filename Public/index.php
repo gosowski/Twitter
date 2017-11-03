@@ -17,12 +17,16 @@ if(isset($_SESSION['logged'])) {
 }
 
 if(isset($_POST['newTweet'])) {
-    $tweetText = $_POST['newTweet'];
+    if($_POST['newTweet'] != null) {
+        $tweetText = $_POST['newTweet'];
         $tweet = new Tweet();
         $tweet -> setText($tweetText);
         $tweet -> setUserId($_SESSION['id']);
         $tweet -> saveToDB($conn);
         header('Location: index.php');
+    } else {
+        echo "<span class='error'> Wpisz treść tweeta</span>";
+    }
 }
 
 
@@ -43,6 +47,7 @@ if(isset($_POST['newTweet'])) {
         </form>
     </div>
     <div id="tweets">
+        Ostatnio dodane tweety:
         <?php
 
             $tweets = Tweet::loadAllTweets($conn);
