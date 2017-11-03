@@ -111,17 +111,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php
 
         $tweets = Tweet::loadAllTweetsByUserId($conn, $_SESSION['id']);
-        foreach($tweets as $tweet) {
-            $id = $tweet -> getId();
-            $text = $tweet -> getText();
-            $creationDate = $tweet -> getCreationDate();
-            echo "<div class='tweet'>";
-            echo "Utworzony: ".$creationDate."<br>";
-            echo $text;
-            echo "<div>";
-            echo '<button type="submit" name="goToTweet" value="'.$id.'">Show</button>';
-            echo '</div>';
-            echo "</div>";
+        if($tweets) {
+            foreach($tweets as $tweet) {
+                $id = $tweet -> getId();
+                $text = $tweet -> getText();
+                $creationDate = $tweet -> getCreationDate();
+                echo "<div class='tweet'>";
+                echo "Utworzony: ".$creationDate."<br>";
+                echo $text;
+                echo "<div>";
+                echo '<a href="showtweet.php?id='.$id.'">'.'Pokaż</a>';
+                echo '</div>';
+                echo "</div>";
+            }
+        } else {
+            echo "<span class='error'>Nie napisałeś jeszcze żadnych tweetów</span>";
         }
     ?>
 </div>
