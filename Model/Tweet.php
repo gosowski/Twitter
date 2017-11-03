@@ -76,6 +76,8 @@ class Tweet
                 $res[] = $tweet;
             }
             return $res;
+        } else {
+            return false;
         }
     }
 
