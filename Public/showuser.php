@@ -6,6 +6,10 @@ require_once (__DIR__ . './../sql/config.php');
 require_once (__DIR__.'./../Model/User.php');
 require_once (__DIR__.'./../Model/Tweet.php');
 
+if(!isset($_GET['userId']) or $_GET['userId'] == null or !isset($_SESSION['logged'])) {
+    header('Location: index.php');
+} else if($_SESSION['id'] != $_GET['userId'])
+    header('Location: showuser.php?userId='.$_SESSION['id']);
 ?>
 
 <!DOCTYPE html>
