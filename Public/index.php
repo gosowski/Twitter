@@ -57,7 +57,7 @@ if(isset($_POST['newTweet'])) {
                 echo "Utworzony: ".$creationDate." przez: ".$userEmail."<br>";
                 echo $text;
                 echo "<div>";
-                echo '<button type="submit" name="goToTweet" value="'.$id.'">Show</button>';
+                echo '<a href="showtweet.php?id='.$id.'">'.'Pokaż</a>';
                 echo '</div>';
                 echo "</div>";
             }
