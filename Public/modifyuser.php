@@ -104,30 +104,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <a href="logout.php">Wyloguj się</a><br>
         <a href="index.php">Powrót do strony głównej</a>
-
+        <?php
+            echo '<a href="showuser.php?userId='.$_SESSION['id'].'">Pokaż moje tweety</a>';
+        ?>
     </div>
-</div>
-<div class="rectangle">
-    <?php
-
-        $tweets = Tweet::loadAllTweetsByUserId($conn, $_SESSION['id']);
-        if($tweets) {
-            foreach($tweets as $tweet) {
-                $id = $tweet -> getId();
-                $text = $tweet -> getText();
-                $creationDate = $tweet -> getCreationDate();
-                echo "<div class='tweet'>";
-                echo "Utworzony: ".$creationDate."<br>";
-                echo $text;
-                echo "<div>";
-                echo '<a href="showtweet.php?id='.$id.'">'.'Pokaż</a>';
-                echo '</div>';
-                echo "</div>";
-            }
-        } else {
-            echo "<span class='error'>Nie napisałeś jeszcze żadnych tweetów</span>";
-        }
-    ?>
 </div>
 
 </body>
