@@ -68,17 +68,6 @@ if(isset($_POST['privateMsg'])) {
             <br><br>
             <input type="submit" value="Wyślij">
         </fieldset>
-
-<!--        <select name="collector">-->
-<!--            <option value="">--Wybierz odbiorcę--</option>-->
-<!--            --><?php
-//                users($conn);
-//            ?>
-<!--        </select>-->
-<!--        <br>-->
-<!--        <textarea name="privateMsg" cols="40" rows="10" maxlength="255"></textarea>-->
-<!--        <br>-->
-<!--        <input type="submit" value="Wyślij">-->
     </form>
 
     <div class="linki">
