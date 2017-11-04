@@ -32,7 +32,7 @@ if(!isset($_GET['userId']) or $_GET['userId'] == null or !isset($_SESSION['logge
             echo "<div class='tweet'>";
             echo "Utworzony: ".$creationDate."<br>";
             echo $text;
-            echo "<div>";
+            echo "<div class='linki'>";
             echo '<a href="showtweet.php?id='.$id.'">'.'Pokaż</a>';
             echo '</div>';
             echo "</div>";
@@ -43,9 +43,12 @@ if(!isset($_GET['userId']) or $_GET['userId'] == null or !isset($_SESSION['logge
     ?>
 </div>
 <div class="linki">
-
-    <a href="logout.php">Wyloguj się</a><br>
-    <a href="index.php">Powrót do strony głównej</a><br>
+    <a href="logout.php">Wyloguj się</a>
+</div>
+<div class="linki">
+    <a href="index.php">Powrót do strony głównej</a>
+</div>
+<div class="linki">
     <a href="modifyuser.php">Mój profil</a>
 </div>
 

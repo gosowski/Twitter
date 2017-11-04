@@ -18,8 +18,12 @@ class TweeterUser {
 
     public function setEmail($email)
     {
-        $this->email = $email;
-        return $this;
+        if(strlen($email) > 0) {
+            $this->email = $email;
+            return $this;
+        } else {
+            echo "Nie wpisano adresu e-mail";
+        }
     }
 
     public function getPass()
@@ -127,3 +131,5 @@ class TweeterUser {
         ];
     }
 }
+
+

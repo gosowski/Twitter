@@ -8,9 +8,10 @@ strona logowania ma mieć też link do strony tworzenia użytkownika
 session_start();
 
 require_once(__DIR__ . './../sql/config.php');
-
-if($_SESSION['logged'] == true) {
-    header('Location: index.php');
+if(isset($_SESSION['logged'])) {
+    if($_SESSION['logged'] == true) {
+        header('Location: index.php');
+    }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -33,6 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if(password_verify($pass, $res['pass'])) {
                         $_SESSION['logged'] = true;
                         $_SESSION['email'] = $email;
+                        $_SESSION['id'] = $res['id'];
+
                         header('Location: index.php');
                     } else {
                         echo "<span class='error'>Wprowadzono złe hasło!</span>";
@@ -70,8 +73,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="password" name="password"><br><br>
         <input type="submit" value="Zaloguj się!">
     </form>
+    <div class="linki">
+        <a href="newuser.php">Zarejestruj się!</a>
+    </div>
 
-    <a href="newuser.php">Zarejestruj się!</a>
 
 </body>
 </html>

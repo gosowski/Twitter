@@ -32,7 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['logged'] = true;
                 $_SESSION['email'] = $email;
                 $_SESSION['id'] = $user -> getId();
-                var_dump($_SESSION['id']);
 
                 header('Location: index.php');
             } else {

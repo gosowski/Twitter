@@ -8,23 +8,20 @@ require_once (__DIR__.'./../Model/User.php');
 require_once (__DIR__.'./../Model/Message.php');
 
 if(isset($_SESSION['logged'])) {
+    echo "<div class='header'>";
     echo "Zalogowany jako ".$_SESSION['email'];
     echo ' <a href="logout.php">Wyloguj się</a>';
     echo ' <a href="modifyuser.php">Mój profil</a>';
     echo ' <a href="messages.php">Wiadomości</a>';
-    echo "<br><br>";
+    echo '</div>';
 
     $checkMsg = Message::checkMsg($conn, $_SESSION['id']);
     if($checkMsg) {
-        echo "<strong>Masz nieprzeczytaną wiadomość</strong>";
+        echo "<br><strong>Masz nieprzeczytaną wiadomość</strong>";
     }
-
-
-
 } else {
     header('Location: login.php');
 }
-
 if(isset($_POST['newTweet'])) {
     if($_POST['newTweet'] != null) {
         $tweetText = $_POST['newTweet'];
@@ -37,9 +34,8 @@ if(isset($_POST['newTweet'])) {
         echo "<span class='error'> Wpisz treść tweeta</span>";
     }
 }
-
-
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,36 +44,35 @@ if(isset($_POST['newTweet'])) {
     <link href="./../CSS/span.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-    <div id="newTweet">
-        <form action="index.php" method="POST">
-            <p>Dodaj nowy wpis:</p>
-            <textarea name="newTweet" cols="40" rows="4" maxlength="140"></textarea><br><br>
-            <input type="submit" value="Opublikuj">
-        </form>
-    </div>
-    <div id="tweets">
-        Ostatnio dodane tweety:
-        <?php
+<div id="newTweet">
+    <form action="index.php" method="POST">
+        <p>Dodaj nowy wpis:</p>
+        <textarea name="newTweet" maxlength="140"></textarea><br><br>
+        <input type="submit" value="Opublikuj">
+    </form>
+</div>
+<div id="tweets">
+    Ostatnio dodane tweety:
 
-            $tweets = Tweet::loadAllTweets($conn);
-            foreach($tweets as $tweet) {
-                $id = $tweet -> getId();
-                $user_id = $tweet -> getUserId();
-                $text = $tweet -> getText();
-                $creationDate = $tweet -> getCreationDate();
-                $user = TweeterUser::loadById($conn, $user_id);
-                $userEmail = $user -> getEmail();
-                echo "<div class='tweet'>";
-                echo "Utworzony: ".$creationDate." przez: ".$userEmail."<br>";
-                echo $text;
-                echo "<div>";
-                echo '<a href="showtweet.php?id='.$id.'">'.'Pokaż</a>';
-                echo '</div>';
-                echo "</div>";
-            }
-        ?>
-    </div>
+    <?php
+    $tweets = Tweet::loadAllTweets($conn);
+    foreach($tweets as $tweet) {
+        $id = $tweet -> getId();
+        $user_id = $tweet -> getUserId();
+        $text = $tweet -> getText();
+        $creationDate = $tweet -> getCreationDate();
+        $user = TweeterUser::loadById($conn, $user_id);
+        $userEmail = $user -> getEmail();
+        echo "<div class='tweet'>";
+        echo "Utworzony: ".$creationDate." przez: ".$userEmail."<br>";
+        echo $text;
+        echo "<div class='linki'>";
+        echo '<a href="showtweet.php?id='.$id.'">'.'Pokaż</a>';
+        echo '</div>';
+        echo "</div>";
+    }
+    ?>
+</div>
 
 </body>
 </html>
-

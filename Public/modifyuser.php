@@ -1,8 +1,4 @@
 <?php
-/*
-Użytkownik ma mieć możliwość edycji informacji o sobie i zmiany hasła.
-Pamiętaj o tym, że użytkownik może edytować tylko i wyłącznie swoje informacje.
-*/
 
 session_start();
 
@@ -99,11 +95,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit" name="submit" value="delAcc">Wyślij</button>
         </form>
     </div>
-    <br><br>
     <div class="linki">
-
-        <a href="logout.php">Wyloguj się</a><br>
+        <a href="logout.php">Wyloguj się</a>
+    </div>
+    <div class="linki">
         <a href="index.php">Powrót do strony głównej</a>
+    </div>
+    <div class="linki">
         <?php
             echo '<a href="showuser.php?userId='.$_SESSION['id'].'">Pokaż moje tweety</a>';
         ?>

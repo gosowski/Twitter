@@ -1,11 +1,4 @@
 <?php
-/*
-Ta strona ma wyświetlać:
-wpis
-autora wpisu
-wszystkie komentarze do każdego z wpisów
-formularz do tworzenia nowego komentarza dla wpisu
- */
 
 session_start();
 
@@ -21,11 +14,11 @@ if(!isset($_SESSION['logged'])) {
 if(isset($_GET['id']) and $_GET['id'] != null) {
     $tweetId = $_GET['id'];
     $showTweet = Tweet::loadTweetById($conn, $tweetId);
-    $singleText = $showTweet -> getText();
-    $singleDate = $showTweet -> getCreationDate();
-    $singleUserId = $showTweet -> getUserId();
+    $singleText = $showTweet->getText();
+    $singleDate = $showTweet->getCreationDate();
+    $singleUserId = $showTweet->getUserId();
     $userTweet = TweeterUser::loadById($conn, $singleUserId);
-    $userTweetEmail = $userTweet -> getEmail();
+    $userTweetEmail = $userTweet->getEmail();
 } else {
     header('Location: index.php');
 }

@@ -10,8 +10,6 @@ if (!isset($_SESSION['logged'])) {
     header('Location: login.php');
 }
 
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,7 +22,6 @@ if (!isset($_SESSION['logged'])) {
     <div class="messages">
         Wiadomości wysłane:
         <?php
-
         $messagesSended = Message::loadAllMsgBySender($conn, $_SESSION['id']);
         if($messagesSended) {
             foreach($messagesSended as $messageSend) {
@@ -42,7 +39,7 @@ if (!isset($_SESSION['logged'])) {
                 } else {
                     echo $text;
                 }
-                echo "<div>";
+                echo "<div class='linki'>";
                 echo '<a href="singlemsg.php?id='.$id.'">'.'Pokaż</a>';
                 echo '</div>';
                 echo "</div>";
@@ -77,7 +74,7 @@ if (!isset($_SESSION['logged'])) {
                 } else {
                     echo $text;
                 }
-                echo "<div>";
+                echo "<div class='linki'>";
                 echo '<a href="singlemsg.php?id='.$id.'">'.'Pokaż</a>';
                 echo '</div>';
                 echo "</div>";
@@ -87,6 +84,13 @@ if (!isset($_SESSION['logged'])) {
         }
         ?>
     </div>
+    <div class="linki">
+        <a href="sendmsg.php">Wyślij wiadomość</a>
+    </div>
+    <div class="linki">
+        <a href="index.php">Powrót do strony głównej</a>
+    </div>
+
 
 </body>
 </html>

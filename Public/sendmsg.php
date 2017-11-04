@@ -43,9 +43,6 @@ if(isset($_POST['privateMsg'])) {
     }
 }
 
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -67,8 +64,11 @@ if(isset($_POST['privateMsg'])) {
         <textarea name="privateMsg" cols="40" rows="10" maxlength="255"></textarea>
         <br>
         <input type="submit" value="Wyślij">
-
     </form>
+
+    <div class="linki">
+        <a href="index.php">Powrót do strony głównej</a>
+    </div>
 
 </body>
 </html>

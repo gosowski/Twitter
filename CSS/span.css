@@ -8,28 +8,28 @@ body {
     color: red;
 }
 
-#changeEmail {
-    width: 200px;
-    height: 40px;
-    padding: 2px;
+/*#changeEmail {*/
+    /*width: 200px;*/
+    /*height: 40px;*/
+    /*padding: 2px;*/
 
-}
+/*}*/
 
-#changePass {
-    width: 200px;
-    height: 180px;
-    padding: 2px
-}
+/*#changePass {*/
+    /*width: 200px;*/
+    /*height: 180px;*/
+    /*padding: 2px*/
+/*}*/
 
-#deleteAccount {
-    width: 200px;
-    height: 50px;
-    padding: 2px;
-}
+/*#deleteAccount {*/
+    /*width: 200px;*/
+    /*height: 50px;*/
+    /*padding: 2px;*/
+/*}*/
 
 .form {
     width: 200px;
-    height: 350px;
+    height: auto;
 }
 
 .linki {
@@ -51,7 +51,7 @@ body {
     height: auto;
     padding: 10px;
     background-color: #a2bff4;
-    border: dotted 2px #020031;
+    /*border: dotted 2px #020031;*/
     border-radius: 15px;
     margin: 10px;
     font-size: 15px;
@@ -62,7 +62,7 @@ body {
     width: 300px;
     height: auto;
     padding: 5px;
-    border: 2px solid #6495ed;
+    /*border: 2px solid #6495ed;*/
     border-radius: 10px;
 }
 
@@ -72,6 +72,7 @@ body {
 
 .rectangle {
     width: 400px;
+    height: auto;
     margin: 10px;
 }
 
@@ -109,7 +110,7 @@ textarea {
     height: auto;
     padding: 5px;
     background-color: #c1d4f7;
-    border: 1px dotted #324a76;
+    /*border: 1px dotted #324a76;*/
     border-radius: 15px;
     margin: 5px auto 5px auto;
     font-size: 12px;
@@ -126,15 +127,18 @@ p {
 
 input[type="submit"] {
     width: auto;
-    padding: 2px 5px 2px 5px;
+    padding: 5px;
     text-align: right;
     font-weight: 700;
+    border-radius: 5px;
+    letter-spacing:1px;
 }
 
 input[type="submit"]:hover {
     cursor: pointer;
-    background-color: #a2bff4;
-
+    background-color: #5a86d5;
+    color: #FFFFFF;
+    border: 2px solid #324a76;
 }
 
 button[type="submit"] {
@@ -142,12 +146,24 @@ button[type="submit"] {
     padding: 2px 5px 2px 5px;
     border-radius: 5px;
     font-weight: 700;
+    letter-spacing: 1px;
 }
 
 button[type="submit"]:hover {
     cursor: pointer;
-    background-color: #a2bff4;
-
+    background-color: #5a86d5;
+    border: 2px solid #324a76;
+    color: #FFFFFF;
 }
+
+fieldset {
+    width: 300px;
+    border-radius: 15px;
+}
+
+legend {
+    letter-spacing: 2px;
+}
+
 
 
