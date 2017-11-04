@@ -46,9 +46,11 @@ if(isset($_POST['newTweet'])) {
 <body>
 <div id="newTweet">
     <form action="index.php" method="POST">
-        <p>Dodaj nowy wpis:</p>
-        <textarea name="newTweet" maxlength="140"></textarea><br><br>
-        <input type="submit" value="Opublikuj">
+        <fieldset id="fieldText">
+            <legend>Dodaj nowy wpis</legend>
+            <textarea name="newTweet" maxlength="140"></textarea><br><br>
+            <input type="submit" value="Opublikuj">
+        </fieldset>
     </form>
 </div>
 <div id="tweets">
