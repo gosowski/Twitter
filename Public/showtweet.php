@@ -75,12 +75,14 @@ if(isset($_POST['newComm'])) {
         }
 
         ?>
-    </div>
+    </div><br>
     <div id="newComm">
         <form action="" method="POST">
-            <p>Dodaj komentarz:</p>
-            <textarea name="newComm" cols="40" rows="4"></textarea><br><br>
-            <input type="submit" value="Opublikuj">
+            <fieldset id="fieldComm">
+                <legend>Skomentuj</legend>
+                <textarea name="newComm" maxlength="140"></textarea><br><br>
+                <input type="submit" value="Opublikuj">
+            </fieldset>
         </form>
     </div>
 
