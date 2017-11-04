@@ -73,26 +73,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="rectangle">
     <div class="form">
         <form action="" method="POST" id="changeEmail">
-            Zmiana adresu email:<br>
-            <input type="text" name="changeEmail"><br>
-            <button type="submit" name="submit" value="reEmail">Wyślij</button>
-        </form>
-        <br><br>
+            <fieldset>
+                <legend>Zmiana adresu e-mail</legend>
+                <label>Nowy adres e-mail:<br>
+                    <input type="text" name="changeEmail"></label><br><br>
+                <button type="submit" name="submit" value="reEmail">Wyślij</button>
+            </fieldset>
+        </form><br>
         <form action="" method="POST" id="changePass">
-            Zmiana hasła: <br>
-            Stare hasło:
-            <input type="password" name="oldPass"><br>
-            Nowe hasło:
-            <input type="password" name="newPass"><br>
-            Powtórz nowe hasło:
-            <input type="password" name="reNewPass"><br>
+            <fieldset>
+                <legend>Zmiana hasła</legend>
+                <label>Stare hasło:<br>
+                    <input type="password" name="oldPass"></label><br>
+                <label>Nowe hasło:<br>
+                    <input type="password" name="newPass"></label><br>
+                <label>Powtórz nowe hasło:<br>
+                    <input type="password" name="reNewPass"></label><br><br>
+                <button type="submit" name="submit" value="rePass">Wyślij</button>
 
-            <button type="submit" name="submit" value="rePass">Wyślij</button>
-        </form>
+            </fieldset>
+        </form><br>
         <form action="" method="POST" id="deleteAccount">
-            <input type="radio" name="delete" value="deleteYes">Tak<br>
-            <input type="radio" name="delete" value="deleteNo">Nie<br>
-            <button type="submit" name="submit" value="delAcc">Wyślij</button>
+            <fieldset>
+                <legend>Usuwanie konta</legend>
+                <input type="radio" name="delete" value="deleteYes">Tak
+                <input type="radio" name="delete" value="deleteNo">Nie<br><br>
+                <button type="submit" name="submit" value="delAcc">Wyślij</button>
+            </fieldset>
         </form>
     </div>
     <div class="linki">
