@@ -67,11 +67,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
     <form action="" method="POST">
-        Wpisz adres e-mail:<br>
-        <input type="text" name="email"><br><br>
-        Wpisz hasło: <br>
-        <input type="password" name="password"><br><br>
-        <input type="submit" value="Zaloguj się!">
+        <fieldset id="login">
+            <legend>Zaloguj się</legend>
+            <label>Adres e-mail:<br>
+                <input type="text" name="email">
+            </label><br>
+            <label>Hasło:<br>
+                <input type="password" name="password">
+            </label><br>
+            <br>
+            <input type="submit" value="Zaloguj się">
+        </fieldset>
     </form>
     <div class="linki">
         <a href="newuser.php">Zarejestruj się!</a>

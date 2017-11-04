@@ -62,13 +62,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 <form action="" method="POST">
-    Wpisz adres e-mail:<br>
-    <input type="text" name="email"><br><br>
-    Wpisz hasło: <br>
-    <input type="password" name="password"><br><br>
-    Powtórz hasło: <br>
-    <input type="password" name="repass"><br><br>
-    <input type="submit" value="Zarejestruj się!">
+    <fieldset id="newUser">
+        <legend>Zarejestruj się</legend>
+        <label>Adres e-mail:<br>
+            <input type="text" name="email">
+        </label><br>
+        <label>Hasło:<br>
+            <input type="password" name="password">
+        </label><br>
+        <label>Powtórz hasło:<br>
+            <input type="password" name="repass">
+        </label><br>
+        <br>
+        <input type="submit" value="Rejestracja">
+    </fieldset>
 </form>
 
 </body>

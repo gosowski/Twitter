@@ -53,10 +53,10 @@ if(isset($_GET['id']) and $_GET['id'] != null) {
             echo "<div class='linki'>";
             echo "<a href='sendmsg.php?collectorId=$msgSenderId'>Odpowiedz</a>";
             echo "</div>";
-            echo '<div class="linki">';
-            echo '<a href="messages.php">Powrót do wiadomości</a>';
-            echo '</div>';
         }
+        echo '<div class="linki">';
+        echo '<a href="messages.php">Powrót do wiadomości</a>';
+        echo '</div>';
     ?>
 
 </body>
